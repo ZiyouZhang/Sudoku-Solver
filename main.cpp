@@ -42,8 +42,39 @@ int main() {
     cout << "NOT ";
   cout << "a valid move. The board is:" << '\n';
   display_board(board);
+  cout << endl;
 
-	// write more tests
+	// Test position out of range.
+  cout << "Putting '1' into Z9 is ";
+  if (!make_move("Z9", '1', board)) 
+    cout << "NOT ";
+  cout << "a valid move. The board is:" << '\n';
+  display_board(board);
+  cout << endl;
+
+  // Test value out of range.
+  cout << "Putting '0' into I8 is ";
+  if (!make_move("I8", '0', board))
+    cout << "NOT ";
+  cout << "a valid move. The board is:" << '\n';
+  display_board(board);
+  cout << endl;
+
+  // Test overwhrite existing value.
+  cout << "Putting '3' into A4 is ";
+  if (!make_move("A4", '3', board)) 
+    cout << "NOT ";
+  cout << "a valid move. The board is:" << '\n';
+  display_board(board);
+  cout << endl;
+
+  // Test input an against-sudoku-rule value.
+  cout << "Putting '4' into A1 is ";
+  if (!make_move("A1", '4', board)) 
+    cout << "NOT ";
+  cout << "a valid move. The board is:" << '\n';
+  display_board(board);
+  cout << endl;
 
   cout << "=================== Question 3 ===================" << "\n\n";
 
@@ -77,6 +108,11 @@ int main() {
   cout << "=================== Question 5 ===================" << "\n\n";
 
 	// write more tests
+  test_mistery("easy.dat", board);
+  test_mistery("medium.dat", board);
+  test_mistery("mystery1.dat", board);
+  test_mistery("mystery2.dat", board);
+  test_mistery("mystery3.dat", board);
 
   return 0;
 }
