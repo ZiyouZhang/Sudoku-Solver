@@ -84,7 +84,7 @@ bool is_complete(char board[9][9]) {
 
 // Check if the move is valid (the position is in range and the slot is unoccupied).
 // If not, leave the board unmodified. If valid, make the move.
-bool make_move(char position[], char digit, char board[9][9]) {
+bool make_move(const char position[], char digit, char board[9][9]) {
   int row_index = position[0] - 'A';
   int column_index = position[1] - '1';
   // Check the validity of the digit.

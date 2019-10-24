@@ -1,8 +1,12 @@
 sudoku: main.o sudoku.o
-	g++ -g -Wall main.o sudoku.o -o sudoku
-main.o: main.cpp
-	g++ -g -Wall -c main.cpp
-sudoku.o: sudoku.cpp
-	g++ -g -Wall -c sudoku.cpp
+	g++ main.o sudoku.o -o sudoku
+
+%.o: %.cpp
+	g++ -Wall -g -c $<
+
+main.o: sudoku.h
+
+sudoku.o: sudoku.h
+
 clean:
-	rm -rf *.o sudoku
+	rm -f *.o sudoku
