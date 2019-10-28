@@ -1,12 +1,13 @@
-sudoku: main.o sudoku.o
+sudoku: main.o sudoku.o 
 	g++ main.o sudoku.o -o sudoku
 
-%.o: %.cpp
-	g++ -Wall -g -c $<
+main.o: main.cpp sudoku.h
+	g++ -g -Wall -c main.cpp
 
-main.o: sudoku.h
+sudoku.o: sudoku.cpp sudoku.h
+	g++ -g -Wall -c sudoku.cpp
 
-sudoku.o: sudoku.h
-
+.PHONY: clean
 clean:
-	rm -f *.o sudoku
+	rm -rf *.o sudoku
+

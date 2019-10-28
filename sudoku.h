@@ -10,6 +10,6 @@ bool solve_board(char board[9][9]);
 bool is_valid(char board[9][9], int row_index, int column_index, char digit);
 bool find_first_empty_slot(char board[9][9], int& row_index, int& column_index);
 bool solve_board(char board[9][9], int& recursion_count);
-void test_mistery(const char* filename, char board[9][9]);
+void test_mystery(const char* filename, char board[9][9]);
 
 #endif // SUDOKU_H_

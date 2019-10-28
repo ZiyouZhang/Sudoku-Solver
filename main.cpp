@@ -8,7 +8,7 @@ int main() {
 
   char board[9][9];
 
-  /* This section illustrates the use of the pre-supplied helper functions. */
+  // This section illustrates the use of the pre-supplied helper functions.
   cout << "============= Pre-supplied functions =============" << "\n\n";
 
   cout << "Calling load_board():" << '\n';
@@ -103,16 +103,32 @@ int main() {
     cout << "A solution cannot be found." << '\n';
   cout << '\n';
 
-	// write more tests
+  // Test an already filled sudoku.
+  load_board("easy-solution.dat", board);
+  if (solve_board(board)) {
+    cout << "The 'easy-solution' board has a solution:" << '\n';
+    display_board(board);
+  } else 
+    cout << "A solution cannot be found." << '\n';
+  cout << '\n';
+
+  // Test an empty sudoku.
+  load_board("empty.dat", board);
+  if (solve_board(board)) {
+    cout << "The 'empty' board has a solution:" << '\n';
+    display_board(board);
+  } else 
+    cout << "A solution cannot be found." << '\n';
+  cout << '\n';
 
   cout << "=================== Question 5 ===================" << "\n\n";
 
-	// write more tests
-  test_mistery("easy.dat", board);
-  test_mistery("medium.dat", board);
-  test_mistery("mystery1.dat", board);
-  test_mistery("mystery2.dat", board);
-  test_mistery("mystery3.dat", board);
+	// Test all 
+  test_mystery("easy.dat", board);
+  test_mystery("medium.dat", board);
+  test_mystery("mystery1.dat", board);
+  test_mystery("mystery2.dat", board);
+  test_mystery("mystery3.dat", board);
 
   return 0;
 }
