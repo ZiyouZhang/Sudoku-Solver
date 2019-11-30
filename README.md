@@ -8,4 +8,4 @@ Clone this repository and compile the code using the makefile supplied. Run sudo
 
 ## Author
 
-* **Ziyou Zhang** - *Cool coding stuff* - [LinkedIn](https://www.linkedin.com/in/ziyou-zhang/)
+* **Ziyou Zhang** - *Algo design and coding stuff* - [LinkedIn](https://www.linkedin.com/in/ziyou-zhang/)
