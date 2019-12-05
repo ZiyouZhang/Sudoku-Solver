@@ -1,13 +1,14 @@
-sudoku: main.o sudoku.o 
-	g++ main.o sudoku.o -o sudoku
+CXX = g++
+CXXFLAGS = -Wall -Wextra -g 
+EXE = sudoku
+OBJ = main.o sudoku.o
 
-main.o: main.cpp sudoku.h
-	g++ -g -Wall -c main.cpp
+$(EXE): $(OBJ)
+	$(CXX) $^ -o $@
 
-sudoku.o: sudoku.cpp sudoku.h
-	g++ -g -Wall -c sudoku.cpp
+%.o: %.cpp makefile
+	$(CXX) $(CXXFLAGS) -c $<
 
-.PHONY: clean
+.phony: clean
 clean:
 	rm -rf *.o sudoku
-

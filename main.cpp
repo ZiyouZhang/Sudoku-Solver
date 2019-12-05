@@ -12,7 +12,7 @@ int main() {
   cout << "============= Pre-supplied functions =============" << "\n\n";
 
   cout << "Calling load_board():" << '\n';
-  load_board("easy.dat", board);
+  load_board("puzzles/easy.dat", board);
 
   cout << '\n' << "Displaying Sudoku board with display_board():" << '\n';
   display_board(board);
@@ -20,13 +20,13 @@ int main() {
 
   cout << "=================== Question 1 ===================" << "\n\n";
 
-  load_board("easy.dat", board);
+  load_board("puzzles/easy.dat", board);
   cout << "Board is ";
   if (!is_complete(board))
     cout << "NOT ";
   cout << "complete." << "\n\n";
 
-  load_board("easy-solution.dat", board);
+  load_board("puzzles/easy-solution.dat", board);
   cout << "Board is ";
   if (!is_complete(board))
     cout << "NOT ";
@@ -34,7 +34,7 @@ int main() {
 
   cout << "=================== Question 2 ===================" << "\n\n";
 
-  load_board("easy.dat", board);
+  load_board("puzzles/easy.dat", board);
 
   // Should be OK
   cout << "Putting '1' into I8 is ";
@@ -78,8 +78,8 @@ int main() {
 
   cout << "=================== Question 3 ===================" << "\n\n";
 
-  load_board("easy.dat", board);
-  if (save_board("easy-copy.dat", board))
+  load_board("puzzles/easy.dat", board);
+  if (save_board("puzzles/easy-copy.dat", board))
     cout << "Save board to 'easy-copy.dat' successful." << '\n';
   else
     cout << "Save board failed." << '\n';
@@ -87,7 +87,7 @@ int main() {
 
   cout << "=================== Question 4 ===================" << "\n\n";
 
-  load_board("easy.dat", board);
+  load_board("puzzles/easy.dat", board);
   if (solve_board(board)) {
     cout << "The 'easy' board has a solution:" << '\n';
     display_board(board);
@@ -95,7 +95,7 @@ int main() {
     cout << "A solution cannot be found." << '\n';
   cout << '\n';
 
-  load_board("medium.dat", board);
+  load_board("puzzles/medium.dat", board);
   if (solve_board(board)) {
     cout << "The 'medium' board has a solution:" << '\n';
     display_board(board);
@@ -104,7 +104,7 @@ int main() {
   cout << '\n';
 
   // Test an already filled sudoku.
-  load_board("easy-solution.dat", board);
+  load_board("puzzles/easy-solution.dat", board);
   if (solve_board(board)) {
     cout << "The 'easy-solution' board has a solution:" << '\n';
     display_board(board);
@@ -113,7 +113,7 @@ int main() {
   cout << '\n';
 
   // Test an empty sudoku.
-  load_board("empty.dat", board);
+  load_board("puzzles/empty.dat", board);
   if (solve_board(board)) {
     cout << "The 'empty' board has a solution:" << '\n';
     display_board(board);
@@ -124,11 +124,11 @@ int main() {
   cout << "=================== Question 5 ===================" << "\n\n";
 
 	// Test all 
-  test_mystery("easy.dat", board);
-  test_mystery("medium.dat", board);
-  test_mystery("mystery1.dat", board);
-  test_mystery("mystery2.dat", board);
-  test_mystery("mystery3.dat", board);
+  test_mystery("puzzles/easy.dat", board);
+  test_mystery("puzzles/medium.dat", board);
+  test_mystery("puzzles/mystery1.dat", board);
+  test_mystery("puzzles/mystery2.dat", board);
+  test_mystery("puzzles/mystery3.dat", board);
 
   return 0;
 }
